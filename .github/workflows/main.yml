@@ -11,29 +11,29 @@ on:
         - utv
         - test
         - prod
-        
+
 jobs:
   print-utv:
     name: print-utv
-    if: ${{ inputs.environment == 'utv' }}
     runs-on: ubuntu-latest
+    if: ${{ inputs.environment == 'utv' }}
     steps:
-      - uses: actions/checkout@v2
-      - name: print
-        run: echo "UTV!!!"
+    - uses: actions/checkout@v2
+    - name: print
+      run: echo "UTV!!!"
   print-test:
     name: print-test
-    if: ${{ inputs.environment == 'test' }}
     runs-on: ubuntu-latest
+    if: ${{ inputs.environment == 'test' }}
     steps:
-      - uses: actions/checkout@v2
-      - name: print
-        run: echo "TEST!!!"
+    - uses: actions/checkout@v2
+    - name: print
+      run: echo "TEST!!!"
   print-prod:
     name: print-prod
-    if: ${{ inputs.environment == 'prod' }}
     runs-on: ubuntu-latest
+    if: ${{ inputs.environment == 'prod' }}
     steps:
-      - uses: actions/checkout@v2
-      - name: print
-        run: echo "PROD!!!"
+    - uses: actions/checkout@v2
+    - name: print
+      run: echo "PROD!!!"
