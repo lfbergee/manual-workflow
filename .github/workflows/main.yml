@@ -11,15 +11,10 @@ on:
         - utv
         - test
         - prod
-
 jobs:
   print-utv:
-    name: print-utv
-    runs-on: ubuntu-latest 
+    name: print-utv-job
+    runs-on: ubuntu-latest
     steps:
-    - name: boot
-      uses: actions/checkout@v2
-  
-    - name: print
-      run: echo "UTV!!!"
- 
+      - name: shipit
+        run: echo running code
