@@ -1,0 +1,36 @@
+name: 'Publish'
+on:
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: 'Environment'
+        required: true
+        default: 'utv'
+        type: choice
+        options:
+        - utv
+        - test
+        - prod
+        
+jobs:
+  print-utv:
+    name: print-utv
+    if: ${{ inputs.environment == 'utv' }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: print
+        run: echo "UTV!!!"
+  print-test:
+    name: print-test
+    if: ${{ inputs.environment == 'test' }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: print
+        run: echo "TEST!!!"
+  print-prod:
+    name: print-prod
+    if: ${{ inputs.environment == 'prod' }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: print
+        run: echo "PROD!!!"
