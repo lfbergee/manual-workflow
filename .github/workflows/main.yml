@@ -1,20 +1,15 @@
-name: 'Publish'
-on:
+name: Manual Inputs
+on: 
   workflow_dispatch:
     inputs:
-      environment:
-        description: 'Environment'
+      version:
+        description: Bump Version
+        default: v1.0.0
         required: true
-        default: 'utv'
-        type: choice
-        options:
-        - utv
-        - test
-        - prod
 jobs:
-  print-utv:
-    name: print-utv-job
+  bump-version:
+    name: Bump Package Version
     runs-on: ubuntu-latest
     steps:
-      - name: shipit
-        run: echo running code
+      - name: Example variable usage
+        run: git tag ${{ github.event.inputs.version }}
