@@ -15,25 +15,11 @@ on:
 jobs:
   print-utv:
     name: print-utv
-    runs-on: ubuntu-latest
-    if: ${{ inputs.environment == 'utv' }}
+    runs-on: ubuntu-latest 
     steps:
-    - uses: actions/checkout@v2
+    - name: boot
+      uses: actions/checkout@v2
+  
     - name: print
       run: echo "UTV!!!"
-  print-test:
-    name: print-test
-    runs-on: ubuntu-latest
-    if: ${{ inputs.environment == 'test' }}
-    steps:
-    - uses: actions/checkout@v2
-    - name: print
-      run: echo "TEST!!!"
-  print-prod:
-    name: print-prod
-    runs-on: ubuntu-latest
-    if: ${{ inputs.environment == 'prod' }}
-    steps:
-    - uses: actions/checkout@v2
-    - name: print
-      run: echo "PROD!!!"
+ 
